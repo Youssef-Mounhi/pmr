@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -33,12 +33,22 @@
                   </a>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
-                  <div class="navbar-end" x-data="{ items: ['Home', 'About us', 'Our plan', 'Contact'] }">
-                    <template x-for="item in items">
-                      <a class="navbar-item" x-text="item">
-
-                      </a>
-                    </template>
+                  <div class="navbar-end">
+                    <a class="navbar-item" data-target="main-hero">
+                      Accueil
+                    </a>
+                    <a class="navbar-item" data-target="notreprojet">
+                      Projet
+                    </a>
+                    <a class="navbar-item" data-target="notreequipe">
+                      Équipe
+                    </a>
+                    <a class="navbar-item" data-target="noussoutenir">
+                      Nous soutenir
+                    </a>
+                    <a class="navbar-item" data-target="contact">
+                      Contact
+                    </a>
                   </div>
                 </div>
             </div>
@@ -52,15 +62,15 @@
                     Pimp Mon Raid
                 </h1>
                 <h2 class="subtitle">
-                    $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
+                  Association rassemblant 4 étudiant de l'Université de Technologie de Compiègne ayant pour but de participer à Uniraid, un rallye d'orientation à vocation caritative et solidaire
                 </h2>
-                <div class="block has-text-centerded">
-                  <button class="btn mr-2">
-                    <span class="button_top">Support us</span>
+                <div class="block has-text-centerded button-wrapper">
+                  <button class="btn">
+                    <span class="button_top">Nous soutenir</span>
                   </button>
-                  <button class="btn btn-secondary is-medium ml-2">
-                    <span class="button_top">Discover</span>
-                  </button>
+                  <a href="./plaquette.pdf" download class="btn btn-secondary is-medium ml-2" id="discover-down">
+                    <span class="button_top">Notre plaquette</span>
+                  </a>
                 </div>
             </div>
         </div>
@@ -68,7 +78,7 @@
 
     <div class="hero-foot">
       <div class="block has-text-centered">
-        <button class="container_mouse">
+        <button class="container_mouse" id="scroll-down">
           <span class="mouse-btn">
               <span class="mouse-scroll"></span>
           </span>
@@ -82,18 +92,20 @@
   <section id="notreprojet" class="hero">
     <div class="container">
       <div class="hero-body">
-        <div class="column is-6 is-offset-3">
-          <h2 class="title has-text-centered">Notre projet</h2>
-          <p class="subtitle has-text-centered mt-2">
-            $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world.
-          </p>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <h2 class="title has-text-centered" data-aos="fade-up">Notre projet</h2>
+            <p class="subtitle has-text-centered mt-2" data-aos="fade-up">
+              Nous souhaitons participer à la 13ème édition qui se déroulera en février 2024. L’objectif est de traverser le Maroc du nord au sud, et apporter 40 kg de matériel solidaire aux écoles du désert pour permettre aux enfants d’étudier dans de meilleures conditions.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="columns my-4">
+      <div class="columns my-4" id="swiper-container">
         <div class="swiper column is-offset-2 is-8 py-6">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up">
               <div class="tile">
                 <div class="ourplan-card bg-color-primary">
                   <div class="ourplan-block-content">
@@ -111,7 +123,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up">
               <div class="tile">
                 <div class="ourplan-card bg-color-secondary">
                   <div class="ourplan-block-content">
@@ -128,7 +140,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up">
               <div class="tile">
                 <div class="ourplan-card bg-color-tertiary">
                   <div class="ourplan-block-content">
@@ -164,63 +176,71 @@
             </p>
           </div>
           <div class="columns is-centered team-col-wrapper">
-            <div class="column is-5 team-wrapper team-one">
+            <div class="column is-5 team-wrapper team-one" data-aos="fade-up">
               <div class="image">
-                <img class="team-img" src="./img/shanjpg.jpg" />
+                <img class="team-img" src="./img/ilyass.jpeg" />
               </div>
               <div class="team-content">
                 <div class="team-name">
-                  <h3 class="title is-4">Youssef Mounhi</h3>
-                  <span class="team-aka">(aka. Shinobi)</span>
+                  <h3 class="title is-4">Ilyass</h3>
+                  <span class="team-aka">(aka. Lambda)</span>
                 </div>
                 <div class="team-description my-3">
-                  <p>Essayer de nouvelles expériences et sortir de ma zone de confort m’a toujours conduit à des aventures mémorables et enrichissantes.</p>
-                  <p>L’informatique est ma passion mais d’autre part, j’ai toujours été intéressé et émerveillé par les voitures et la mécanique. Par ailleurs, je suis footballeur amateur depuis mon enfance !</p>
-                  <p>Je suis ambitieux et déterminé à contribuer positivement à la société.</p>
+                  <p>Mon odeur préférée? LE GASOIL. (L’essence en deuxième). Dès mon plus jeune âge je nourris une passion pour la mécanique automobile, je suis passé très vite du démontage de Hotwheels aux moteurs TDI de Audi.</p>
+                  <p>Je suis têtu, motivé, ambitieux et j’aime prendre des risques. Mon point fort: lorsque je veux faire quelque chose, je m’y mets à 100% pour l’accomplir. </p>
+                  <p>Je suis prêt à tout donner pour la réussite de notre projet !</p>
                 </div>
               </div>
             </div>
-            <div class="column is-5 team-wrapper team-two">
+            <div class="column is-5 team-wrapper team-two" data-aos="fade-up">
               <div class="image">
-                <img class="is-4by5 team-img" src="./img/shanjpg.jpg" />
+                <img class="is-4by5 team-img anas-img" src="./img/anas.jpeg" />
               </div>
               <div class="team-content">
                 <div class="team-name">
-                  <h3 class="title is-4">Youssef Mounhi</h3>
-                  <span class="team-aka">(aka. Shinobi)</span>
+                  <h3 class="title is-4">Anas</h3>
+                  <span class="team-aka">(aka. Tuco)</span>
                 </div>
                 <div class="team-description my-3">
-                  <p>Essayer de nouvelles expériences et sortir de ma zone de confort m’a toujours conduit à des aventures mémorables et enrichissantes.</p>
-                  <p>L’informatique est ma passion mais d’autre part, j’ai toujours été intéressé et émerveillé par les voitures et la mécanique. Par ailleurs, je suis footballeur amateur depuis mon enfance !</p>
-                  <p>Je suis ambitieux et déterminé à contribuer positivement à la société.</p>
+                  <p>
+                    Eh oui, c’est moi Tucoo ! Contrairement au truand éponyme de la série breaking bad, je suis un jeune homme fort sympathique, passionné d'automobiles et d'aventures.  
+                  <p>
+                  <p>
+                    Originaire de la région du Moyen Atlas marocain, je suis  fier de mes racines berbères ! Outre ma passion pour l’automobile, j’ai également pratiqué des sports de combat : boxe, judo... Ma soif de découvertes et mon envie de faire les choses en grand font de moi une personne ambitieuse et déterminée pour ce Raid !
+                  <p>
                 </div>
               </div>
             </div>
           </div>
           <div class="columns my-6 is-centered team-col-wrapper">
-            <div class="column is-5 team-wrapper team-three">
+            <div class="column is-5 team-wrapper team-three" data-aos="fade-up">
               <div class="image">
-                <img class="team-img" src="./img/shanjpg.jpg" />
+                <img class="team-img" src="./img/elliot.jpeg" />
               </div>
               <div class="team-content">
                 <div class="team-name">
-                  <h3 class="title is-4">Youssef Mounhi</h3>
-                  <span class="team-aka">(aka. Shinobi)</span>
+                  <h3 class="title is-4">Elliot</h3>
+                  <span class="team-aka">(aka. Elt)</span>
                 </div>
                 <div class="team-description my-3">
-                  <p>Essayer de nouvelles expériences et sortir de ma zone de confort m’a toujours conduit à des aventures mémorables et enrichissantes.</p>
-                  <p>L’informatique est ma passion mais d’autre part, j’ai toujours été intéressé et émerveillé par les voitures et la mécanique. Par ailleurs, je suis footballeur amateur depuis mon enfance !</p>
-                  <p>Je suis ambitieux et déterminé à contribuer positivement à la société.</p>
+                  <p>
+                    En un mot : AVENTURIER. J’aime l’inconnu, les rencontres incongrues et les défis en tout genre. Passionné de mécanique, je répare depuis quelques années des motos et des voitures pour ensuite les revendre. Je suis aussi un sportif, notamment boxeur mais pas que, et enfin un amoureux de la lecture.
+                  </p>
+                  <p>
+                    Par ailleurs, je suis un homme travailleur, sérieux dans mes multiples projets (sportifs, immobiliers…), en dépit de certaines tentatives capillaires ratées !                  </p>
+                  <p>
+                    Un homme parfait en somme !
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="column is-5 team-wrapper team-four">
+            <div class="column is-5 team-wrapper team-four" data-aos="fade-up">
               <div class="image">
-                <img class="is-4by5 team-img" src="./img/shanjpg.jpg" />
+                <img class="is-4by5 team-img" src="./img/youssef.jpeg" />
               </div>
               <div class="team-content">
                 <div class="team-name">
-                  <h3 class="title is-4">Youssef Mounhi</h3>
+                  <h3 class="title is-4">Youssef</h3>
                   <span class="team-aka">(aka. Shinobi)</span>
                 </div>
                 <div class="team-description my-3">
@@ -241,15 +261,17 @@
       <div class="hero-body">
         <div class="columns">
           <div class="column my-3">
-            <h2 class="title has-text-centered">Notre association</h2>
+            <h2 class="title has-text-centered" data-aos="fade-up">Notre association</h2>
             <p class="subtitle has-text-centered mt-2">
             </p>
           </div>
         </div>
         <div class="columns">
-          <div class="column"></div>
+          <div class="column" data-aos="fade-up-right">
+            <img src="img/logo.png"/>
+          </div>
           <div class="column">
-            <div class="text-wrapper">
+            <div class="text-wrapper" data-aos="fade-left">
               <p>Nous nous sommes inspirés du programme télévisé “Pimp My Ride”, lors duquel des mécaniciens transforment des épaves en voitures de luxe.</p>
               <p>Notre association est une association loi 1901 à but non lucratif.</p>
               <p>Ce statut nous permet de donner un cadre légal à notre action, afin de créer un compte en banque et d’être crédibles dans nos démarches de recherches de sponsors.</p>
@@ -266,46 +288,193 @@
   <section id="noussoutenir" class="hero my-6 bg-color-primary">
     <div class="hero-body">
         <div class="container">
-        <div class="columns">
-          <div class="column is-5 is-offset-1">
-            <h2 class="title text-color-secondary">Nous soutenir</h2>
-            <p class="has-text-white mb-5">Uniraid est une association internationale située en Andorre, des étudiants Allemands, Français, Espagnols, Suisses participent chaque année.            </p>
-            <button class="btn mr-2">
-              <span class="button_top">Support us</span>
-            </button>
+          <div class="columns is-centered">
+            <div class="column is-6 has-text-centered">
+              <h2 class="title text-color-secondary" data-aos="fade-up">Nous soutenir</h2>
+              <p class="has-text-white mb-5" data-aos="fade-up">Uniraid est une association internationale située en Andorre, des étudiants Allemands, Français, Espagnols, Suisses participent chaque année.</p>
+            </div>
           </div>
-          <div class="column is-5">
-            <div class="asso-benefit-wrapper">
-              <div class="asso-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                </svg>                
-              </div>
-              <div>
-                <h3 class="title is-4 text-color-secondary my-0">Humanitaire</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In odit.</p>
-              </div>
-            </div>
-            <div class="asso-benefit-wrapper mt-3">
-              <div class="asso-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-                </svg>                
-              </div>
-              <div>
-                <h3 class="title is-4 text-color-secondary my-0">Médiatisation</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In odit.</p>
+          <div class="columns is-centered">
+            <div class="column is-5">
+              <div class="asso-benefit-wrapper" data-aos="fade-right">
+                <div class="asso-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                  </svg>                
+                </div>
+                <div>
+                  <h3 class="title is-4 text-color-secondary my-0">Humanitaire</h3>
+                  <p>Notre projet est avant tout humanitaire : apporter le maximum de matériel solidaire aux écoles isolées.
+                  </p>
+                </div>
               </div>
             </div>
-            
+            <div class="column is-offset-1 is-5">
+              <div class="asso-benefit-wrapper" data-aos="fade-left">
+                <div class="asso-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                  </svg>                
+                </div>
+                <div>
+                  <h3 class="title is-4 text-color-secondary my-0">Médiatisation</h3>
+                  <p>
+                    20 reportages TV, 15 émissions radio et 67 articles de presse en 2022 autour du rallye en Europe
+                  </p>
+                </div>
+              </div>  
+            </div>
+          </div>
+      </div>
+      <div class="line"></div>
+      <div class="columns is-centered">
+        <div class="column is-6 has-text-centered">
+          <h2 class="title text-color-secondary" data-aos="fade-up">Comment ?</h2>
+          <p class="has-text-white mb-5" data-aos="fade-up">Uniraid est une association internationale située en Andorre, des étudiants Allemands, Français, Espagnols, Suisses participent chaque année.</p>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-5 has-text-centered" data-aos="fade-down-right">
+          <div class="neobrutism-card py-5 px-5 bg-color-secondary has-text-white">
+            <h4 class="title is-5 text-color-primary">Financiers</h4>
+            <p>
+              Nous vous proposons un emplacement sur nos magnifiques bolides pour le logo de votre marque, afin de vous faire profiter de la visibilité du véhicule !
+            </p>
+            <!-- <br/> -->
+          </div>
+        </div>
+        <div class="column is-5 has-text-centered" data-aos="fade-down-left">
+          <div class="neobrutism-card py-5 px-6 bg-color-secondary has-text-white">
+            <h4 class="title is-5 text-color-primary">Matériels</h4>
+            <p>Ces biens matériels comprennent:  Pièces mécaniques détachées - Essence - Fourniture scolaire et sportives - Vêtements et jouets</p>
+            <!-- <br /> -->
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered" id="besoins-anchor">
+        <div class="column is-5 has-text-centered" data-aos="fade-up-right" data-aos-anchor="#besoins-anchor">
+          <div class="neobrutism-card py-5 px-6 bg-color-secondary has-text-white">
+            <h4 class="title is-5 text-color-primary">Préparation</h4>
+            <p>
+              Nous allons devoir améliorer nos voitures, bien qu’elles soient déjà extrêmement performantes !
+            </p>
+            <p>Nous avons donc plusieures pièces à changer.</p>
+            <!-- <br /> -->
+          </div>
+        </div>
+        <div class="column is-5 has-text-centered" data-aos="fade-up-left" data-aos-anchor="#besoins-anchor">
+          <div class="neobrutism-card py-5 px-6 bg-color-secondary has-text-white">
+            <h4 class="title is-5 text-color-primary">Humanitaire et voyage</h4>
+            <p>
+              Nous avons besoin de livrer au moins 80 kilos de matériel solidaire (fournitures scolaires, d’équipement sportif, de vêtements, de jouets, etc…)
+            </p>
+            <!-- <br /> -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  
 
+  <section class="hero is-fullheight" id="contact">
+		<div class="hero-body">
+			<div class="container has-text-centered" data-aos="fade-up">
+				<div class="columns is-8 is-variable neobrutism-card bg-color-tertiary">
+					<div class="column is-6 has-text-left">
+						<h1 class="title is-1 text-color-primary">Contactez-nous</h1>
+						<p class="subtitle is-6 has-text-white">Pour toute question ou proposition, nous sommes à l'écoute.</p>
+						<div class="social-media">
+							<a href="https://www.facebook.com/people/Pimp-Mon-Raid/100092376121858/" target="_blank" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>              </a>
+							<a href="https://www.instagram.com/pimp_mon_raid/" target="_blank" class="">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>              </a>
+							<a href="https://www.tiktok.com/@pimp_mon_raid?_t=8cJaX3TDKhO&_r=1" target="_blank" class="">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50"  fill="currentColor" stroke="currentColor"><path fill="currentColor" d="M 9 4 C 6.2495759 4 4 6.2495759 4 9 L 4 41 C 4 43.750424 6.2495759 46 9 46 L 41 46 C 43.750424 46 46 43.750424 46 41 L 46 9 C 46 6.2495759 43.750424 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.671576 6 44 7.3284241 44 9 L 44 41 C 44 42.671576 42.671576 44 41 44 L 9 44 C 7.3284241 44 6 42.671576 6 41 L 6 9 C 6 7.3284241 7.3284241 6 9 6 z M 26.042969 10 A 1.0001 1.0001 0 0 0 25.042969 10.998047 C 25.042969 10.998047 25.031984 15.873262 25.021484 20.759766 C 25.016184 23.203017 25.009799 25.64879 25.005859 27.490234 C 25.001922 29.331679 25 30.496833 25 30.59375 C 25 32.409009 23.351421 33.892578 21.472656 33.892578 C 19.608867 33.892578 18.121094 32.402853 18.121094 30.539062 C 18.121094 28.675273 19.608867 27.1875 21.472656 27.1875 C 21.535796 27.1875 21.663054 27.208245 21.880859 27.234375 A 1.0001 1.0001 0 0 0 23 26.240234 L 23 22.039062 A 1.0001 1.0001 0 0 0 22.0625 21.041016 C 21.906673 21.031216 21.710581 21.011719 21.472656 21.011719 C 16.223131 21.011719 11.945313 25.289537 11.945312 30.539062 C 11.945312 35.788589 16.223131 40.066406 21.472656 40.066406 C 26.72204 40.066409 31 35.788588 31 30.539062 L 31 21.490234 C 32.454611 22.653646 34.267517 23.390625 36.269531 23.390625 C 36.542588 23.390625 36.802305 23.374442 37.050781 23.351562 A 1.0001 1.0001 0 0 0 37.958984 22.355469 L 37.958984 17.685547 A 1.0001 1.0001 0 0 0 37.03125 16.6875 C 33.886609 16.461891 31.379838 14.012216 31.052734 10.896484 A 1.0001 1.0001 0 0 0 30.058594 10 L 26.042969 10 z M 27.041016 12 L 29.322266 12 C 30.049047 15.2987 32.626734 17.814404 35.958984 18.445312 L 35.958984 21.310547 C 33.820114 21.201935 31.941489 20.134948 30.835938 18.453125 A 1.0001 1.0001 0 0 0 29 19.003906 L 29 30.539062 C 29 34.707538 25.641273 38.066406 21.472656 38.066406 C 17.304181 38.066406 13.945312 34.707538 13.945312 30.539062 C 13.945312 26.538539 17.066083 23.363182 21 23.107422 L 21 25.283203 C 18.286416 25.535721 16.121094 27.762246 16.121094 30.539062 C 16.121094 33.483274 18.528445 35.892578 21.472656 35.892578 C 24.401892 35.892578 27 33.586491 27 30.59375 C 27 30.64267 27.001859 29.335571 27.005859 27.494141 C 27.009759 25.65271 27.016224 23.20692 27.021484 20.763672 C 27.030884 16.376775 27.039186 12.849206 27.041016 12 z"/></svg>              </a>
+						</div>
+            <div class="my-5">
+              <button class="btn btn-full-w">
+                <span class="button_top">Support us</span>
+              </button>
+            </div>
+					</div>
+					<div class="column has-text-left">
+            <div class="message is-hidden" id="form-status-success">
+              <div class="message-header has-background-success">
+                <p class="has-text-weight-normal" id="success-msg">Votre message a été envoyé avec succès</p>
+                <button class="delete" aria-label="delete"></button>
+              </div>
+            </div>
+            <div class="message is-hidden" id="form-status-error">
+              <div class="message-header has-background-danger" >
+                <p class="has-text-weight-normal" id="error-msg">Une erreur est survenue. Veuillez réessayer ou nous contacter par d'autres moyens.</p>
+                <button class="delete" aria-label="delete"></button>
+              </div>
+            </div>
+						<form name="contact" method="POST" netlify>
+              <div class="field">
+                <label class="label text-color-primary">Nom</label>
+                <div class="control">
+                  <input class="input" type="text" name="nom" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label text-color-primary">Entreprise</label>
+                <div class="control">
+                  <input class="input" type="text" name="entreprise" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label text-color-primary">Addresse électronique</label>
+                <div class="control">
+                  <input class="input" type="email" name="email" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label text-color-primary">Message</label>
+                <div class="control">
+                  <textarea class="textarea" name="message" required></textarea>
+                </div>
+              </div>
+              <div class="control">
+                <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium bg-color-primary">Send Message</button>
+              </div>
+            </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <footer class="py-4 bg-color-primary">
+    <p class="has-text-centered has-text-white">
+      Réalisé avec <span class="text-color-tertiary">&#10084;</span> par l'équipe <strong class="text-color-secondary">Pimp Mon Raid</strong>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+  // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+      
+
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 0, // values from 0 to 3000, with step 50ms
+      duration: 400, // values from 0 to 3000, with step 50ms
+      easing: 'ease-out-cubic', // default easing for AOS animations
+      once: false, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 

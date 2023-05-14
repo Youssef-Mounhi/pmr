@@ -6,6 +6,10 @@
     --color-secondary: #173258;
     --color-tertiary: #C70225;
 }
+
+body{
+    overflow-x: hidden;
+}
 .text-color-primary{
     color: var(--color-primary) !important;
 }
@@ -87,6 +91,9 @@
     transition: transform 0.1s ease;
     transition: transform 0.1s ease, -webkit-transform 0.1s ease;
 }
+.btn-full-w{
+    width: 100%;
+}
 .btn:hover .button_top {
     /* Pull the button upwards when hovered */
    -webkit-transform: translateY(-0.33em);
@@ -110,6 +117,7 @@ button.container_mouse{
     color:#e5e5e5;
     opacity: 40%;
     padding: 0.4em;
+    cursor: pointer;
 }
 .mouse-btn {
     margin: 10px auto;
@@ -142,11 +150,20 @@ button.container_mouse{
     }
 }
 
+/*  */
+.button-wrapper{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 /* Big card */
 
 .ourplan-card {
-    width: 100%;
-    height: 90vh;
+    width: 85%;
     padding: 1rem;
     border-radius: 1rem;
     border: .5vmin solid #05060f;
@@ -214,8 +231,27 @@ button.container_mouse{
     max-width: 55%;
     margin: 2em auto;
   }
+
+#swiper-container{
+    width: 100%;
+    max-width: 100vw;
+}
+@media screen and (max-width: 768px) {
+    #swiper-container .ourplan-img{
+        display: none;
+    }
+}
   
 .swiper-wrapper{
+}
+
+/* Card global style */
+.neobrutism-card{
+    border-radius: 1rem;
+    border: .5vmin solid #05060f;
+    -webkit-box-shadow: .4rem .4rem #05060f;
+            box-shadow: .4rem .4rem #05060f;
+    color: white;
 }
 
 
@@ -226,6 +262,12 @@ button.container_mouse{
     -webkit-box-shadow: .4rem .4rem #05060f;
             box-shadow: .4rem .4rem #05060f;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .team-col-wrapper .team-wrapper:nth-child(2){
+        margin-top: 1.3em;
+    }
 }
 .team-one{
     background-color: var(--color-primary);
@@ -245,6 +287,10 @@ button.container_mouse{
     border-radius: 8px 8px;
     max-height: 40vh;
     object-fit: cover;
+    object-position: center 55%;
+}
+.team-img.anas-img{
+    object-position: center 10%;
 }
 .team-col-wrapper{
     gap: 2.5rem;
@@ -254,8 +300,9 @@ button.container_mouse{
 }
 .team-name{
     display: flex;
-    gap: 0.8em;
+    gap: 0 0.8em;
     align-items: end;
+    flex-wrap: wrap;
 }
 .team-name h3{
     margin: 0 !important;
@@ -281,12 +328,14 @@ button.container_mouse{
 .asso-benefit-wrapper{
     display: flex;
     gap:1em;
-    align-items: center;
-    
+    align-items: start;
+}
+.asso-benefit-wrapper div{
+
 }
 .asso-icon{
     height: 5em;
-    width: 5em;
+    width: 10em;
     background: rgba(255, 255, 255, 0.5);
     color: var(--color-secondary);
     opacity: 1;
@@ -295,7 +344,52 @@ button.container_mouse{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .asso-benefit-wrapper p{
     color:white;
+}
+
+.line{
+    width: 70%;
+    margin: 2em auto;
+    margin-top: 3em;
+    height: 0.1em;
+    background-color: white;
+    opacity: 0.5;
+}
+
+/* Contact */
+
+#contact .social-media{
+    margin: 0.5em 0;
+    display: flex;
+    gap:0.5em;
+}
+#contact .social-media a{
+    padding: 0.5em 0em;
+    color: var(--color-secondary);
+    transition: all 0.2s ease;
+    top:0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#contact .social-media a svg{
+    width: 1.8em;
+    height: 1.8em; 
+}
+
+#contact .social-media a:hover{
+    top:-5px;
+    color: var(--color-primary);
+}
+
+.swiper-button-prev {
+    color: var(--color-primary) !important;
+  }
+  
+.swiper-button-next {
+    color: var(--color-primary) !important;
 }
