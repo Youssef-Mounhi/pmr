@@ -29,10 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("button#scroll-down").addEventListener("click", function(){
       document.getElementById("notreprojet").scrollIntoView({ behavior: 'smooth' });
     })
-    document.querySelector("button#discover-down").addEventListener("click", function(){
-      document.getElementById("notreprojet").scrollIntoView({ behavior: 'smooth' });
-    })
-
 
     document.querySelectorAll(".navbar-menu .navbar-item").forEach(elem=>{
       elem.addEventListener("click", function(e){
@@ -44,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const handleSubmit = function(event) {
       event.preventDefault();
-    
       const myForm = event.target;
       const formData = new FormData(myForm);
       document.getElementById("form-status-error").classList.add("is-hidden");
