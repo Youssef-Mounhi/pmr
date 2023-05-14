@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
             document.getElementById("form-status-success").classList.remove("is-hidden");
         })
+        .then(()=> myForm.reset())
         .catch((error) => document.getElementById("form-status-error").classList.remove("is-hidden"));
     };
     
