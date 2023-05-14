@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    const handleSubmit = (event) => {
+    const handleSubmit = function(event) {
       event.preventDefault();
     
       const myForm = event.target;
