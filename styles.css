@@ -321,7 +321,10 @@ button.container_mouse{
 .text-wrapper{
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
+    gap: 0.4em;
+    height: 100%;
+    justify-content: center;
+
 }
 
 /* notre asso */
@@ -335,7 +338,7 @@ button.container_mouse{
 }
 .asso-icon{
     height: 5em;
-    width: 10em;
+    width: 7em;
     background: rgba(255, 255, 255, 0.5);
     color: var(--color-secondary);
     opacity: 1;
@@ -344,7 +347,10 @@ button.container_mouse{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+.asso-icon svg{
+    width: 100%;
+    height: 100%;
 }
 .asso-benefit-wrapper p{
     color:white;
