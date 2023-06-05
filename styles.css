@@ -105,7 +105,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 27, 27, 0.3);
+    background: rgba(27, 27, 27, 0.7);
 }
 .slider-outer{
     height:100% !important;
@@ -260,6 +260,7 @@ button.container_mouse{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: space-between;
     height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -311,7 +312,7 @@ button.container_mouse{
   }
 
   .ourplan-img{
-    max-width: 55%;
+    max-width: 50%;
     margin: 2em auto;
   }
 
@@ -325,7 +326,8 @@ button.container_mouse{
     }
 }
   
-.swiper-wrapper{
+.swiper-wrapper .tile{
+    height: 100%;
 }
 
 /* Card global style */
@@ -509,4 +511,55 @@ button.container_mouse{
 .social-media-hero a:hover{
     top:-5px;
     color: var(--color-tertiary) !important;
+}
+
+
+.car-wrapper{
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.car_img{
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.car-wrapper:hover .car-overlay{
+    bottom: 0;
+}
+.car-overlay{
+    position: absolute;
+    background: rgba(244, 180, 26, 1);
+    border-radius: 0 0 12px 12px;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .car-overlay{
+        bottom: 0;
+    }
+}
+@media (hover: none) {
+    .car-overlay{
+        bottom: 0;
+    }
+}
+
+.small-line{
+    width: 50%;
+    height: 1px;
+    background: white;
+    margin: 10px auto;
+    opacity: 0.5;
 }
