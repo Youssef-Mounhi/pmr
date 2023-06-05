@@ -508,5 +508,5 @@ button.container_mouse{
 }
 .social-media-hero a:hover{
     top:-5px;
-    color: white !important;
+    color: var(--color-tertiary) !important;
 }
