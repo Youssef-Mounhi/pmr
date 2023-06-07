@@ -565,7 +565,7 @@ button.container_mouse{
 }
 
 *:not(.maintenance){
-    display:hidden;
+    display:none;
 }
 
 .maintenance{
